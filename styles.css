@@ -161,5 +161,8 @@ td {
 .header p {
     font-size: 1rem;
 }
-    
+
+table {
+    width: 80vw;
+}
 }
