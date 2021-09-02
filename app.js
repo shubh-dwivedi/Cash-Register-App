@@ -5,7 +5,7 @@ const checkButton = document.querySelector("#btn-cash-amount");
 
 const noOfNotes = document.querySelectorAll(".no-of-notes");
 const message = document.querySelector("#error-message");
-const showReturnAmount = document.querySelector("#return-amount");
+const showReturnAmount = document.querySelector("#return-amount-caption");
 
 var cashView = document.querySelector(".cash-given-container");
 var notesView = document.querySelector(".cash-return-container");

@@ -129,10 +129,11 @@ input:focus {
     margin: 1rem auto;
     color: white;
 }
-#return-amount {
+#return-amount-caption {
     color: white;
     font-size: 2rem;
     margin: 0.5rem auto;
+    background: rgba(0,0,0, 0.75);
 }
 table {
     size: 10rem;
