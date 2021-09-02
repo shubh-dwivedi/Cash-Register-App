@@ -1,53 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,300;0,500;1,300&family=Roboto:wght@300;400;700&display=swap');
 
 :root {
-    --primary-color: #7fd8be;
+    --primary-color: #2ab184;
 }
 
 body {
-    min-height: 100vh;
+    font-family: 'roboto',sans-serif;
+    font-weight: normal;
+}
+
+.container-all {
+    margin: 0px auto;
+    background: rgb(34,175,195);
+    background-image: url("BUDGETTING.svg");
+    max-height: fit-content;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: 55vw;
+    background-clip:padding-box;
+}
+/* main container div */
+.container-app {
     display: flex;
     flex-direction: column;
-    max-width: 85%;
-    margin: 0px auto;
+    min-width: 35vw;
+    max-width: 40vw;
+    margin: auto;
+    padding: 2rem;
+    height: 100vh;
+    background: rgba(0,0,0, 0.50);
+}
+
+/* ------------------------------------ */
+
+/* bill and cash given containers */
+
+label {
+    color: wheat;;
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-size: 2rem;
+    background: rgba(0,0,0, 0.75);
+   }
+
+#btn-bill-amount {
+    display: block;
+    margin: 0.5rem auto;
+    font-size: 1.25rem;
+    color: white;
+    width: 15vh;
+    background-color: #658E9C;
+}
+
+#btn-cash-amount {
+    display: block;
+    margin: 0.5rem auto;
+    color: white;
+    font-size: 1.25rem;
+    width: 15vh;
+    background-color: #658E9C;
+}
+
+.bill-amount-container {
+    margin: 1rem auto;
+    
+}
+
+input {
+    font-size: 1rem;
+    background: rgba(0,0,0, 0.75);
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+input:focus {
+    outline: none;
+}
+
+.cash-given-container {
+    margin: 1rem auto;
+}
+
+/* ------------------------------ */
+
+
+/* Header section -------- */
+.header {
+    color: white;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.header p {
+    font-size: 1.2rem;
+}
+
+.heading-header {
+    text-align: center;
+    margin: auto;
+    font-size: 2rem;
+    font-family: "glory",sans-serif;
 }
 
 .center-container {
     margin: 0 auto;
 }
+/* ----------------------- */
 
-.header {
-    color: white;
-    padding: 0.5rem 1.5rem;
-    font-weight: bold;
-    background-color: var(--primary-color);
-}
-
-.error {
+#error-message {
     color: red;
+    background: white;
     font-size: 1rem;
     font-style: italic;
-}
-
-.bill-amount-container {
-    margin: 2rem;
-}
-
-.cash-given-container {
-    margin: 2rem;
-}
-
-table {
-    border-color: black;
-    border-width: 0.1rem;
-}
-
-.footer {
-    position: fixed;
-    bottom: 0;
-    background-color: #90BEDE;
-    padding: 2rem 1rem;
-    color: black;
     text-align: center;
-    border-top-right-radius: 1rem;
-    margin-top: auto;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+
+/* Return change to customer section */
+.cash-return-container {
+    margin: 1rem auto;
+    color: white;
+}
+#return-amount {
+    color: white;
+    font-size: 2rem;
+    margin: 0.5rem auto;
+}
+table {
+    size: 10rem;
+    width: 32vw;
+    height: 6rem;
+    background: wheat;
+    text-align: center;
+}
+th {
+    background: rgb(107, 107, 255);
+    
+}
+td {
+    background: coral;
+}
+
+/* ------------------------------------ */
+
+@media screen and (max-width: 600px) {
+.container-all {
+    background-size: 100vh;
+}
+
+.container-app {
+    min-width:fit-content;
+    height: 100vh;
+}
+
+.header p {
+    font-size: 1rem;
+}
+    
 }

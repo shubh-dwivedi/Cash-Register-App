@@ -1,80 +1,90 @@
-const btnBillInput = document.querySelector("#btn-bill-input");
-const billAmount = document.querySelector("#txt-bill-input");
+const billAmount = document.querySelector("#bill-amount");
+const nextBtn = document.querySelector("#btn-bill-amount");
+const cashGiven = document.querySelector("#cash-amount");
+const checkButton = document.querySelector("#btn-cash-amount");
 
-const errorMessage = document.querySelector("#error-message");
+const noOfNotes = document.querySelectorAll(".no-of-notes");
+const message = document.querySelector("#error-message");
+const showReturnAmount = document.querySelector("#return-amount");
 
-const returnAmountCaption = document.querySelector("#return-amount-caption");
+var cashView = document.querySelector(".cash-given-container");
+var notesView = document.querySelector(".cash-return-container");
 
-const btnCashInput = document.querySelector("#btn-cash-input");
-const cashAmount = document.querySelector("#txt-cash-input");
-const divCashInput = document.querySelector(".cash-given-container");
 
-const cashReturnDiv = document.querySelector("#cash-return-container");
-const noOfNotesTable = document.querySelectorAll(".no-of-notes");
+const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
 
-const outputCashReturn = document.querySelector("#output-cash-return");
+cashView.style.display = "none";
+notesView.style.display = "none";
 
-const notesAvailable = [2000,500,100,20,10,5,1];
-
-divCashInput.style.display = 'none';
-errorMessage.style.display = "none";
-cashReturnDiv.style.display = "none";
-
-function clickHandlerBillAmount() {
-    if(billAmount.value == "" || billAmount.value <= 0) {
-        console.log(billAmount.value);
-        
+nextBtn.addEventListener("click", function showCashEntryBox() {
+    if (billAmount.value ==="" || billAmount < 0) {
+        showMessage("Please enter a valid bill amount!");
     } else {
-        errorMessage.style.display = 'none';
-        divCashInput.style.display = 'block';
+        hideMessage();
+        cashView.style.display = "block";
+    cashGiven.value = "";
+    notesView.style.display = "none"
     }
-}
+    ;
+});
 
-function calculateNoteChange(amountToBeReturned) {
-    cashReturnDiv.style.display = "block";
-    for(var i=0; i<notesAvailable.length; i++) {
+checkButton.addEventListener("click", function clickCheckButtonHandler() {
+    hideMessage();
+    const cashGivenAmount = Number(cashGiven.value);
+    const billedAmount = Number(billAmount.value);
+    if (isNaN(billAmount.value) || isNaN(cashGiven.value)) {
+        showMessage("Please enter a valid bill and cash amount !");
+    } else {
+        if (billedAmount > 0) {
+            if (cashGivenAmount >= billedAmount) {
+                const amountToBeReturned = cashGiven.value - billAmount.value;
 
-            const numberOfNotes = Math.trunc(amountToBeReturned/notesAvailable[i]);
-            amountToBeReturned %= notesAvailable[i];
-            noOfNotesTable[i].innerText = numberOfNotes;
-        
-    }
-
-}
-
-
-function hideErrorMessage() {
-    errorMessage.style.display = "none";
-}
-
-function showErrorMessage(message) {
-    console.log(message);
-    errorMessage.innerText = message;
-    errorMessage.style.display = 'block';
-}
-
-btnBillInput.addEventListener("click",clickHandlerBillAmount);
-
-btnCashInput.addEventListener("click", function clickHandlerCashGiven() {
-        if(cashAmount.value > 0) {
-            if(cashAmount.value > billAmount.value) {
-                hideErrorMessage();
-            
-                const returnAmount = cashAmount.value - billAmount.value;
-                console.log("Amount to return: ", returnAmount);
-                
-                returnAmountCaption.innerText = "Return amount: " + returnAmount;
-                
-                calculateNoteChange(returnAmount);
-                
-            } else if(cashAmount.value == billAmount.value) {
-            console.log("exact cash given");
-            errorMessage.style.display = 'none';
+                if (amountToBeReturned == 0) {
+                    notesView.style.display = "none";
+                    showMessage("Cash given is equal to Bill Amount, so no need to return any change.")
+                } else {
+                    calculateChange(amountToBeReturned);
+                }
             } else {
-                showErrorMessage("Cash amount entered is less than the bill amount! Please enter proper cash amount.");
+                showMessage("Entered cash amount is less than bill amount !");
             }
+
         } else {
-            showErrorMessage("Enter proper cash amount!")
+            showMessage("Bill amount should be greater than 0!");
         }
-        
+    }
+});
+
+function calculateChange(amountToBeReturned) {
+    notesView.style.display = "block";
+    showReturnAmount.innerHTML = "Amount to be returned: &#x20b9; " + amountToBeReturned;
+    for (let i = 0; i < availableNotes.length; i++) {
+        const numberOfNotes = Math.trunc(amountToBeReturned / availableNotes[i]);
+        amountToBeReturned %= availableNotes[i];
+        noOfNotes[i].innerText = numberOfNotes;
+    }
+}
+
+function hideMessage() {
+    message.style.display = "none";
+}
+
+function showMessage(msg) {
+    message.style.display = "block";
+    message.innerText = msg;
+}
+
+billAmount.addEventListener("keyup", (event) => {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        nextBtn.click();
+        cashGiven.focus();
+    }
+});
+
+cashGiven.addEventListener("keyup", (event) => {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        checkButton.click();
+    }
 });

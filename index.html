@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,56 +8,60 @@
     <title>Cash Register App</title>
     <link href="styles.css" rel="stylesheet">
 </head>
+
 <body>
-    <header class="header center-container">
-        <h1 class="heading-header">Cash Register App</h1>
-    </header>
 
-    <div class="bill-amount-container">
-        <label for="bill-amount">Bill Amount:&ensp;&ensp;</label>
-        <input id="txt-bill-input" type="number" placeholder="Enter total bill amount"/>
-        <button id="btn-bill-input">Enter & next</button>
-    </div>
+<div class="container-all">
+    <div class="container-app">
 
-    <div class="cash-given-container">
-        <label for="cash-amount">Cash Amount:&ensp;</label>
-        <input id="txt-cash-input" type="number" placeholder="Enter total cash given by customer" />
-        <button id="btn-cash-input">Enter</button>
+        <header class="header center-container">
+            <h1 class="heading-header">Cash Register Manager</h1>
+            <p id="about-app">Enter the bill amount and cash given by customer and know minimum number of notes to return to customer</p>
+        </header>
+
+        <div class="bill-amount-container">
+            <label for="bill-amount">Bill Amount:</label>
+            <input id="bill-amount" placeholder="Enter total bill amount" />
+            <button id="btn-bill-amount">Next</button>
+        </div>
+
+        <div class="cash-given-container">
+            <label for="cash-amount">Cash Amount:</label>
+            <input id="cash-amount" placeholder="Enter cash given amount" />
+            <button id="btn-cash-amount">Enter</button>
+        </div>
+
         <p id="error-message" class="error"></p>
-    </div>
 
-    <div id="cash-return-container">
-        <table border="1px">
-            <caption id="return-amount-caption">Return amount: &#x20b9; </caption>
-            <tr>
-                <th>No. of Notes</th>
-                <td class="no-of-notes"></td>
-                <td class="no-of-notes"></td>
-                <td class="no-of-notes"></td>
-                <td class="no-of-notes"></td>
-                <td class="no-of-notes"></td>
-                <td class="no-of-notes"></td>
-                <td class="no-of-notes"></td>
-            </tr>
-            <tr>
-                <th>Notes denominations</th>
-                <td>&#x20b9; 2000</td>
-                <td>&#x20b9; 500</td>
-                <td>&#x20b9; 100</td>
-                <td>&#x20b9; 20</td>
-                <td>&#x20b9; 10</td>
-                <td>&#x20b9; 5</td>
-                <td>&#x20b9; 1</td>
-            </tr>
-        </table>
+        <div class="cash-return-container">
+            <table>
+                <caption id="return-amount"></caption>
+                <tr>
+                    <th>No. of Notes</th>
+                    <td class="no-of-notes"></td>
+                    <td class="no-of-notes"></td>
+                    <td class="no-of-notes"></td>
+                    <td class="no-of-notes"></td>
+                    <td class="no-of-notes"></td>
+                    <td class="no-of-notes"></td>
+                    <td class="no-of-notes"></td>
+                </tr>
+                <tr>
+                    <th>Notes denominations</th>
+                    <td>&#x20b9; 2000</td>
+                    <td>&#x20b9; 500</td>
+                    <td>&#x20b9; 100</td>
+                    <td>&#x20b9; 20</td>
+                    <td>&#x20b9; 10</td>
+                    <td>&#x20b9; 5</td>
+                    <td>&#x20b9; 1</td>
+                </tr>
+            </table>
+        </div>
     </div>
-
-    <footer class="footer">
-        <h2>About</h2>
-        <p>This is a cash register management application. 
-            This register takes total bill amount and total cash paid by customer and returns the number of notes of each denomination that should be returned to customer</p>
-    </footer>
+</div>
 
     <script src="app.js" type="text/javascript"></script>
 </body>
+
 </html>
