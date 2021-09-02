@@ -51,7 +51,7 @@ label {
     margin: 0.5rem auto;
     font-size: 1.25rem;
     color: white;
-    width: 15vh;
+    width: 8vw;
     background-color: #658E9C;
 }
 
@@ -60,7 +60,7 @@ label {
     margin: 0.5rem auto;
     color: white;
     font-size: 1.25rem;
-    width: 15vh;
+    width: 8vw;
     background-color: #658E9C;
 }
 
@@ -115,7 +115,7 @@ input:focus {
 #error-message {
     color: red;
     background: white;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-style: italic;
     text-align: center;
     width: 25vw;
@@ -153,7 +153,9 @@ td {
 
 @media screen and (max-width: 600px) {
 .container-all {
-    background-size: 148vw;
+    background-size: 165vw;
+    background-position-x: 50%;
+    background-position-y: 50%;
 }
 
 .container-app {
@@ -165,7 +167,14 @@ td {
     font-size: 1rem;
 }
 
+#btn-bill-amount, #btn-cash-amount {
+    width: 20vw;
+}
+
 table {
     width: 80vw;
+}
+#error-message {
+    width: 75vw;
 }
 }
