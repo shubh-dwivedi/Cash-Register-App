@@ -30,6 +30,7 @@ nextBtn.addEventListener("click", function showCashEntryBox() {
 
 checkButton.addEventListener("click", function clickCheckButtonHandler() {
     hideMessage();
+    notesView.style.display = 'none';
     const cashGivenAmount = Number(cashGiven.value);
     const billedAmount = Number(billAmount.value);
     if (isNaN(billAmount.value) || isNaN(cashGiven.value)) {
