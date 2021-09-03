@@ -18,17 +18,16 @@ body {
     max-height: fit-content;
     background-repeat: no-repeat;
     background-position:center;
-    background-size: 56vw;
-    background-clip:padding-box;
+    background-size: 55vw;
 }
 
 .container-app {
     display: flex;
     flex-direction: column;
     min-width: 35vw;
-    max-width: 40vw;
-    margin: auto;
-    padding: 2rem;
+    max-width: 45vw;
+    margin: 0px auto;
+    padding: 1rem;
     height: 100vh;
     background: rgba(0,0,0, 0.50);
 }
