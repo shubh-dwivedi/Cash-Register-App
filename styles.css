@@ -11,12 +11,10 @@ html {
 body {
     font-family: 'roboto',sans-serif;
     font-weight: normal;
-    background: rgb(34,175,195);
-    background-image: url("background-image.svg");
-    background-repeat: no-repeat;
-    background-position: center;
+    background: url("background-image.svg") no-repeat center top fixed;
+    background-color: rgb(34,175,195);
     background-size: 55vw;
-    margin: 0;
+    margin: auto;
 }
 
 
@@ -221,7 +219,7 @@ table {
 footer {
     width: 100vw;
     background-color: none;
-    position: fixed;
+    position: relative;
 }
 
 footer img {
