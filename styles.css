@@ -49,9 +49,9 @@ label {
 #btn-bill-amount {
     display: block;
     margin: 0.5rem auto;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: white;
-    width: 7vw;
+    width: 8vw;
     background-color: #22c3bc;
     border: 0rem;
     border-radius: 4px;
@@ -61,8 +61,8 @@ label {
     display: block;
     margin: 0.5rem auto;
     color: white;
-    font-size: 1.25rem;
-    width: 7vw;
+    font-size: 1.5rem;
+    width: 8vw;
     background-color: #22c3bc;
     border-radius: 4px;
     border: 0rem;
@@ -205,7 +205,9 @@ html, body {
 }
 
 #btn-bill-amount, #btn-cash-amount {
-    width: 20vw;
+    font-size: 1.3rem;
+    width: 25vw;
+    margin: 0.4rem auto;
 }
 
 .cash-return-container {
