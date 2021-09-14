@@ -11,10 +11,12 @@ html {
 body {
     font-family: 'roboto',sans-serif;
     font-weight: normal;
-    background: url("background-image.svg") no-repeat center top fixed;
+    background: url("background-image.svg");
     background-color: rgb(34,175,195);
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: 55vw;
-    margin: auto;
+    margin: 0;
 }
 
 
@@ -191,11 +193,14 @@ html, body {
     background-size: 165vw;
     background-position-x: 50%;
     background-position-y: 50%;
+    height: 80vh;
 }
 
 .container-app {
     min-width: fit-content;
-    height: 80vh;
+    min-height: 100%;
+    margin-bottom: -40px;
+    padding-bottom: 40px;
 }
 
 .header p {
