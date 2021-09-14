@@ -16,6 +16,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 55vw;
+    margin: 0;
 }
 
 
@@ -159,11 +160,13 @@ footer {
     color:white;
     background-color:  rgb(34,175,195);
     font-family: "glory", sans-serif;
+
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     width: 50vw;
+    box-sizing: border-box;
 }
 
 footer ul {
@@ -182,7 +185,7 @@ footer img {
 
 /* ------------------------------------ */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 975px) {
 body {
     background-size: 165vw;
     background-position-x: 50%;
@@ -191,7 +194,7 @@ body {
 
 .container-app {
     min-width:fit-content;
-    height: 90vh;
+    height: 85vh;
 }
 
 .header p {
