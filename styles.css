@@ -190,11 +190,12 @@ body {
     background-size: 165vw;
     background-position-x: 50%;
     background-position-y: 50%;
+    height: 100%;
 }
 
 .container-app {
-    min-width:fit-content;
-    height: 85vh;
+    min-width: fit-content;
+    height: 80vh;
 }
 
 .header p {
@@ -218,6 +219,7 @@ table {
 footer {
     width: 100vw;
     background-color: none;
+    position: relative;
 }
 
 footer img {
