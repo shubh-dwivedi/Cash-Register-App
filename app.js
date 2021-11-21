@@ -19,7 +19,10 @@ notesView.style.display = "none";
 nextBtn.addEventListener("click", function showCashEntryBox() {
     if (billAmount.value ==="" || billAmount < 0) {
         showMessage("Please enter a valid bill amount!");
-    } else {
+    } else if(billAmount.value ==0) {
+        showMessage("🤨Bill amount cannot be 0!")
+    }
+     else {
         hideMessage();
         cashView.style.display = "block";
     cashGiven.value = "";
@@ -42,16 +45,16 @@ checkButton.addEventListener("click", function clickCheckButtonHandler() {
 
                 if (amountToBeReturned == 0) {
                     notesView.style.display = "none";
-                    showMessage("Cash given is equal to Bill Amount, so no need to return any change.")
+                    showMessage("Cash given is equal to Bill Amount, so no need to return any change😊")
                 } else {
                     calculateChange(amountToBeReturned);
                 }
             } else {
-                showMessage("Entered cash amount is less than bill amount !");
+                showMessage("😕Cash amount given is less than bill amount. Please give adequate cash amount or get ready to wash plates😉");
             }
 
         } else {
-            showMessage("Bill amount should be greater than 0!");
+            showMessage("🤨Bill amount should be greater than 0!");
         }
     }
 });

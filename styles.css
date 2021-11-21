@@ -130,11 +130,11 @@ input:focus {
     color: #FAC05E;
     background: rgba(0, 0, 0, 0.75);
     font-size: 1.25rem;
-    font-style: italic;
+    font-style: normal;
     text-align: center;
     width: 25vw;
     height: max-content;
-    margin: 0 auto;
+    margin: 0.5rem auto;
 }
 
 
