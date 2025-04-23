@@ -11,7 +11,7 @@ var cashView = document.querySelector(".cash-given-container");
 var notesView = document.querySelector(".cash-return-container");
 
 
-const availableNotes = [2000, 500, 100, 20, 10, 5, 1];
+const availableNotes = [500, 100, 20, 10, 5, 1];
 
 cashView.style.display = "none";
 notesView.style.display = "none";
