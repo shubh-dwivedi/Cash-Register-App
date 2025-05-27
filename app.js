@@ -21,12 +21,11 @@ nextBtn.addEventListener("click", function showCashEntryBox() {
         showMessage("Please enter a valid bill amount!");
     } else if(billAmount.value ==0) {
         showMessage("🤨Bill amount cannot be 0!")
-    }
-     else {
+    } else {
         hideMessage();
         cashView.style.display = "block";
-    cashGiven.value = "";
-    notesView.style.display = "none"
+        cashGiven.value = "";
+        notesView.style.display = "none"
     }
     ;
 });
@@ -60,8 +59,8 @@ checkButton.addEventListener("click", function clickCheckButtonHandler() {
 });
 
 function calculateChange(amountToBeReturned) {
-    notesView.style.display = "block";
-    showReturnAmount.innerHTML = "Amount to be returned: &#x20b9; " + amountToBeReturned;
+    notesView.style.display = "flex";
+    showReturnAmount.innerHTML = "Returning Amount: &#x20b9; " + amountToBeReturned;
     for (let i = 0; i < availableNotes.length; i++) {
         const numberOfNotes = Math.trunc(amountToBeReturned / availableNotes[i]);
         amountToBeReturned %= availableNotes[i];
