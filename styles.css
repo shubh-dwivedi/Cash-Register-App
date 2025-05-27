@@ -14,7 +14,7 @@ body {
     font-weight: normal;
     /* background: url("background-image.svg"); */
     background: url("https://images.pexels.com/photos/27425624/pexels-photo-27425624/free-photo-of-a-pile-of-coins-is-shown-in-this-photo.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-    background-color: #0582ca;
+    /* background-color: #0582ca; */
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100vw;
@@ -32,7 +32,7 @@ body {
     width: 40vw;
     margin: 20px auto;
     padding: 1rem 2.3rem;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 140px);
     background: rgba(48, 58, 65, 0.5);
     border: 2px solid white;
     border-radius: 20px;
@@ -115,7 +115,7 @@ input:focus {
 .header {
     color: white;
     padding: 0.5rem 1rem;
-    font-weight: bold;
+    font-weight: 500;
     text-align: center;
 }
 
@@ -186,16 +186,22 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    width: 49.70vw;
+    width: 44.70vw;
     /* box-sizing: border-box; */
     border-left: 2px solid white;
     border-top: 2px solid white;
     border-right: 2px solid white;
+    
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     backdrop-filter: blur(10px);
 }
 
 footer ul {
     padding-inline-start: 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 footer h2 {
@@ -212,7 +218,7 @@ footer img {
 
 @media screen and (max-width: 975px) {
     html, body {
-        background-size: 150vh;
+        background-size: 154vh;
         background-position-x: 50%;
         background-position-y: 50%;
     }
@@ -221,7 +227,7 @@ footer img {
         /* min-width: fit-content; */
         /* height: 72vh; */
         min-width: 90vw;
-        height: calc(100vh - 100px);
+        height: calc(100vh - 130.5px);
         padding-left: 2px;
         padding-right: 2px;
         width: min-content;
@@ -248,9 +254,19 @@ footer img {
     }
 
     footer {
-        width: 100vw;
+        width: 90vw;
         background-color: none;
         position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: max-content;
+    }
+
+    footer ul {
+        margin: auto auto;
+        padding-top: 6px;
+        padding-bottom: 6px;
     }
 
     footer img {
